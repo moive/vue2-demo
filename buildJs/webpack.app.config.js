@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
@@ -30,9 +30,12 @@ const config = {
 		new webpack.DefinePlugin({
 			ENV: JSON.stringify(Env),
 		}),
-	  // new HtmlWebpackPlugin({
-	  //   template: "index.html",
-	  // }),
+		new HtmlWebpackPlugin({
+			chunks:['app'],
+			template: "./src/scripts/app/app.html",
+			inject: 'body'
+			//filename:"index.html"
+		}),
   
 	  // new MiniCssExtractPlugin(),
   
