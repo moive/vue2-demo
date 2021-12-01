@@ -22,8 +22,18 @@ const config = {
 		// filename: 'js/dist/js/[name].js?v=[hash]'
 	},
 	devServer: {
-	  open: true,
+	  open: {
+		app: {
+			name: 'chrome',
+			arguments: ['--incognito', '--new-window'],
+		  },
+	  },
 	  host: "localhost",
+	//   static: {
+	// 	directory: path.join(__dirname,'..', 'public'),
+	//   },
+		compress: true,
+		port: 9000,
 	},
 	plugins: [
 		new VueLoaderPlugin(),
@@ -43,51 +53,51 @@ const config = {
 	  // Learn more about plugins from https://webpack.js.org/configuration/plugins/
 	],
 	module: {
-	  rules: [
-		{ 
-			test: /\.ts$/, 
-			loader: 'ts-loader',   
-			exclude: /node_modules\/(?!@pictoric\/fb-components)|vue\/src/,
-			options: {
-				appendTsSuffixTo: [/\.vue$/],
-				//configFile:"buildJs/tsconfig.app.json",
-				transpileOnly: true
-			}
-		},
-		{
-			test: /\.vue$/,
-			loader: 'vue-loader',
-			options: {
-				esModule: true
-			}
-		},
-		{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			use: {
-				loader: 'babel-loader',
+		rules: [
+			{ 
+				test: /\.ts$/, 
+				loader: 'ts-loader',   
+				exclude: /node_modules\/(?!@pictoric\/fb-components)|vue\/src/,
 				options: {
-					presets: ['@babel/preset-env']
+					appendTsSuffixTo: [/\.vue$/],
+					//configFile:"buildJs/tsconfig.app.json",
+					transpileOnly: true
 				}
-			}
-		},
-		{
-			test: /\.(png|jpg|gif|svg)$/,
-			loader: 'file-loader',
-			options: {
-				name: '[name].[ext]',
-				//useRelativePath:true,
-				emitFile:false,
-			}
-		},
-		{
-			test: /\.css$/,
-			use: [
-				'vue-style-loader',
-				'css-loader'
-			]
-		},
-	  ],
+			},
+			{
+				test: /\.vue$/,
+				loader: 'vue-loader',
+				options: {
+					esModule: true
+				}
+			},
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env']
+					}
+				}
+			},
+			{
+				test: /\.(png|jpg|gif|svg)$/,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]',
+					//useRelativePath:true,
+					emitFile:false,
+				}
+			},
+			{
+				test: /\.css$/,
+				use: [
+					'vue-style-loader',
+					'css-loader'
+				]
+			},
+		],
 	},
 	optimization: {
 		// minimize: true,

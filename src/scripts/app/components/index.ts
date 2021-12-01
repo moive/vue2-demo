@@ -1,8 +1,10 @@
 import Vue from "vue";
 
+import app from "./app.vue";
 import test from "./test.vue";
 
 let o = {
+	app,
 	test,
 };
 

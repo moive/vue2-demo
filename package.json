@@ -6,7 +6,8 @@
   "scripts": {
     "app": "webpack --mode=development --config buildJs/webpack.app.config.js",
     "app:watch": "webpack --mode=development --watch --config buildJs/webpack.app.config.js",
-    "app:min": "webpack --mode=production --env NODE_ENV=production --config buildJs/webpack.app.config.js"
+    "app:min": "webpack --mode=production --env NODE_ENV=production --config buildJs/webpack.app.config.js",
+    "serve": "webpack serve --config buildJs/webpack.app.config.js"
   },
   "keywords": [],
   "author": "",

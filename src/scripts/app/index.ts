@@ -9,9 +9,8 @@ const router = new VueRouter({
   routes,
 });
 
-
 var app = new Vue({
 	components: Components.components,
 	router,
-	el: ".pageApp",
+	el: "#app"
 });
