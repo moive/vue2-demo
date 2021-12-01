@@ -2,10 +2,12 @@ import Vue from "vue";
 
 import app from "./app.vue";
 import test from "./test.vue";
+import cardBodyMain from './card-body-main.vue'
 
 let o = {
 	app,
 	test,
+	cardBodyMain,
 };
 
 let routes = [];

@@ -27,10 +27,7 @@
 					>{{textTop}}</text>
 				</svg>
 				<div class="card-body">
-					<h3>{{fullname}}</h3>
-					<p>{{message}}</p>
-					<input type="text" class="form-control" v-model="textTop">
-					<h4 class="mt-3">Skills</h4>
+					<card-body-main @valDescription="eventReceive" />
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">
@@ -76,20 +73,16 @@
 	export default {
 		name: 'test',
 		data: ()=>({
-			message:'welcome...!',
-			name: 'Moises',
-			lastname: 'Velasquez',
-			textTop:'Vue 2',
-			skills:[]
+			textTop:'',
+			skills:[],
 		}),
-		computed:{
-			fullname(){
-				return  `${this.name} ${this.lastname}`;
-			}
-		},
+		
 		methods:{
 			helloUser(){
 				alert(this.fullname);
+			},
+			eventReceive(val){
+				this.textTop = val;
 			}
 		}
 	}
