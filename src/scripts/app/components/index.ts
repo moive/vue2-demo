@@ -2,12 +2,14 @@ import Vue from "vue";
 
 import app from "./app.vue";
 import test from "./test.vue";
-import cardBodyMain from './card-body-main.vue'
+import cardBodyMain from './card-body-main.vue';
+import cardImgTop from './card-img-top.vue';
 
 let o = {
 	app,
 	test,
 	cardBodyMain,
+	cardImgTop,
 };
 
 let routes = [];
