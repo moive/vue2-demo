@@ -4,7 +4,10 @@
 			<div class="card">
 				<card-img-top v-model="textTop"/>
 				<div class="card-body">
-					<card-body-main @valDescription="eventReceive" />
+					<card-body-main
+					    @valDescription="eventReceive"
+						ref="cardBody"
+					/>
 				</div>
 				<card-list/>
 				<div class="card-body">
@@ -26,6 +29,9 @@
 		data: ()=>({
 			textTop:'',
 		}),
+		mounted(){
+			console.log(this.$refs.cardBody.fullname)
+		},
 		methods:{
 			helloUser(){
 				alert(this.fullname);
