@@ -5,6 +5,7 @@ import test from "./test.vue";
 import cardBodyMain from './card-body-main.vue';
 import cardImgTop from './card-img-top.vue';
 import cardList from './card-list.vue';
+import users from './users.vue';
 
 let o = {
 	app,
@@ -12,6 +13,7 @@ let o = {
 	cardBodyMain,
 	cardImgTop,
 	cardList,
+	users,
 };
 
 let routes = [];
