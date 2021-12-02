@@ -29,6 +29,9 @@
 <script lang="ts">
 	export default {
 		name: 'test',
+		props: {
+			msg: String,
+		},
 		data: ()=>({
 			textTop:'',
 		}),
