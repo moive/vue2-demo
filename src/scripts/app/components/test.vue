@@ -37,7 +37,7 @@
 		},
 		methods:{
 			helloUser(){
-				alert(this.fullname);
+				alert(this.$refs.cardBody.fullname);
 			},
 			eventReceive(val){
 				this.textTop = val;
