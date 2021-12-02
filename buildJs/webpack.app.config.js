@@ -13,13 +13,12 @@ let Env = "local";
 
 const config = {
 	entry: {
-		app: "./src/scripts/app/",
+		app: ["babel-polyfill","./src/scripts/app/"],
 	},
 	output: {
 		path: path.join(__dirname,"..", "public"),
 		publicPath: '/',
 		filename: "js/[name].js"
-		// filename: 'js/dist/js/[name].js?v=[hash]'
 	},
 	devServer: {
 	  open: {
@@ -77,7 +76,8 @@ const config = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['@babel/preset-env']
+						presets: ['@babel/preset-env'],
+						plugins: ["transform-regenerator"],
 					}
 				}
 			},

@@ -17,6 +17,8 @@
     "@babel/preset-env": "^7.16.4",
     "@webpack-cli/generators": "^2.4.1",
     "babel-loader": "^8.2.3",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.2",
