@@ -18,6 +18,13 @@
     "strictFunctionTypes": false,
     "alwaysStrict": false,
     "allowSyntheticDefaultImports":true,
+    "types": [
+      "node"    ],
+    "paths": {
+      "@/*": [
+        "src/scripts/app/*"
+      ]
+    },
   },
   "include": [
     "./src/scripts/app/*.ts",
